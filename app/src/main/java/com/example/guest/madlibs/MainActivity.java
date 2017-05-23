@@ -30,7 +30,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     Button mAdventureRadio;
     @Bind(R.id.romance)
     Button mRomanceRadio;
-    String storyType = "";
+    String storyType;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -67,7 +67,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         String name = mName.getText().toString();
         String verb = mVerb.getText().toString();
         String noun = mNoun.getText().toString();
-        if (noun.equals("") || verb.equals("") || name.equals("")) {
+        if (noun.equals("") || verb.equals("") || name.equals("") || storyType.equals(null)) {
             Toast.makeText(MainActivity.this, "Fill out all inputs!", Toast.LENGTH_LONG).show();
         } else {
 

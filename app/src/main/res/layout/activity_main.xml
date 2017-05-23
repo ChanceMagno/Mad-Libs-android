@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_main"
     android:layout_width="match_parent"
@@ -9,6 +10,18 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.example.guest.madlibs.MainActivity">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/imageView5"
+        android:scaleType="centerCrop"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:adjustViewBounds="false"
+        app:srcCompat="@drawable/bg2"
+        android:cropToPadding="false" />
 
 
     <EditText
@@ -45,15 +58,6 @@
         android:layout_alignLeft="@+id/editTextName"
         android:layout_alignStart="@+id/editTextName" />
 
-    <Button
-        android:text="Submit"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/submitButton"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="6dp" />
-
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -74,28 +78,17 @@
         android:id="@+id/textView4"
         android:textAlignment="center"
         android:textSize="30sp"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="35dp"
         android:layout_below="@+id/editTextNoun"
-        android:layout_centerHorizontal="true" />
+        android:layout_alignRight="@+id/editTextNoun"
+        android:layout_alignEnd="@+id/editTextNoun" />
 
     <RadioGroup
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/textView4"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="35dp">
-
-        <RadioButton
-            android:text="Adventure Story"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="48dp"
-            android:id="@+id/adventure"
-            android:layout_alignBottom="@+id/romance"
-            android:layout_centerHorizontal="true"
-            android:textAlignment="center"
-            android:onClick="onRadioButtonClicked"/>
+        android:layout_marginTop="24dp"
+        android:layout_below="@+id/textView4"
+        android:layout_centerHorizontal="true">
 
         <RadioButton
             android:text="Romance Story"
@@ -108,7 +101,28 @@
             android:layout_alignEnd="@+id/adventure"
             android:layout_marginBottom="16dp"
             android:onClick="onRadioButtonClicked"/>
+
+        <RadioButton
+            android:text="Adventure Story"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="48dp"
+            android:id="@+id/adventure"
+            android:layout_alignBottom="@+id/romance"
+            android:layout_centerHorizontal="true"
+            android:textAlignment="center"
+            android:onClick="onRadioButtonClicked"/>
     </RadioGroup>
+
+    <Button
+        android:text="Submit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/submitButton"
+        android:background="@color/colorPrimary"
+        android:textColor="@color/colorPrimaryDark"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true" />
 
 
 </RelativeLayout>
