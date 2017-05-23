@@ -18,8 +18,15 @@ public class ResultActivity extends AppCompatActivity {
         String name = intent.getStringExtra("name");
         String verb = intent.getStringExtra("verb");
         String noun = intent.getStringExtra("noun");
+        String storyType = intent.getStringExtra("storyType");
         mNameTextView = (TextView) findViewById(R.id.textView2);
 
-        mNameTextView.setText(String.format("%s Went on a %s ride it was great until a wild dog came up to %s him in the face", name, noun, verb));
+        if(storyType.equals("adventure")){
+            mNameTextView.setText(String.format("%s Went on a %s ride it was great until a wild dog came up to %s him in the face", name, noun, verb));
+        } else {
+            mNameTextView.setText(String.format("%s longed for their beloved partner after years apart. They bought a %s as a gift for their beloved to cherish forever. But upon receiving the gift their beloved %s it", name, noun, verb));
+        }
+
+
     }
 }
